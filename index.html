@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>URBAN COD — Streetwear</title>
+
+  <meta name="description"
+        content="URBAN COD — Boutique streetwear et mode urbaine.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 11, 11, 0.96);
+      border-bottom: 1px solid #242424;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .cart {
+      border: 1px solid #444;
+      background: #fff;
+      color: #000;
+      padding: 9px 14px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 45px 22px;
+      background:
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.8)),
+        radial-gradient(circle at center, #333, #080808 65%);
+    }
+
+    .hero small {
+      color: #aaa;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 12vw, 80px);
+      line-height: .95;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #bbb;
+      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      width: fit-content;
+      padding: 14px 22px;
+      border-radius: 30px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 45px 20px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .product {
+      background: #151515;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #242424;
+    }
+
+    .product-image {
+      height: 210px;
+      background: linear-gradient(135deg, #252525, #111);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .product-info {
+      padding: 14px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .order-button {
+      width: 100%;
+      border: none;
+      background: #fff;
+      color: #000;
+      padding: 11px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .about {
+      background: #111;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .about p {
+      color: #aaa;
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (min-width: 700px) {
+      .products {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .section {
+        max-width: 1200px;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">URBAN COD</div>
+
+  <div class="cart">
+    🛒 <span id="cartCount">0</span>
+  </div>
+</header>
+
+<section class="hero">
+  <small>URBAN STREETWEAR</small>
+
+  <h1>WEAR<br>YOUR<br>IDENTITY.</h1>
+
+  <p>
+    Découvrez la sélection URBAN COD :
+    streetwear, pièces urbaines et outfits soigneusement sélectionnés.
+  </p>
+
+  <a href="#shop" class="button">
+    SHOP NOW
+  </a>
+</section>
+
+<section class="section" id="shop">
+
+  <div class="section-title">
+    <h2>Latest Drops</h2>
+    <span>URBAN COD</span>
+  </div>
+
+  <div class="products">
+
+    <article class="product">
+      <div class="product-image">
+        PHOTO PRODUIT 01
+      </div>
+
+      <div class="product-info">
+        <div class="product-name">
+          Cargo Baggy Black
+        </div>
+
+        <div class="price">
+          15 000 FCFA
+        </div>
+
+        <button
+          class="order-button"
+          onclick="orderProduct('Cargo Baggy Black', '15 000 FCFA')">
+          COMMANDER
+        </button>
+      </div>
+    </article>
+
+
+    <article class="product">
+      <div class="product-image">
+        PHOTO PRODUIT 02
+      </div>
+
+      <div class="product-info">
+        <div class="product-name">
+          Oversized T-Shirt
+        </div>
+
+        <div class="price">
+          10 000 FCFA
+        </div>
+
+        <button
+          class="order-button"
+          onclick="orderProduct('Oversized T-Shirt', '10 000 FCFA')">
+          COMMANDER
+        </button>
+      </div>
+    </article>
+
+
+    <article class="product">
+      <div class="product-image">
+        PHOTO PRODUIT 03
+      </div>
+
+      <div class="product-info">
+        <div class="product-name">
+          Urban Hoodie
+        </div>
+
+        <div class="price">
+          20 000 FCFA
+        </div>
+
+        <button
+          class="order-button"
+          onclick="orderProduct('Urban Hoodie', '20 000 FCFA')">
+          COMMANDER
+        </button>
+      </div>
+    </article>
+
+
+    <article class="product">
+      <div class="product-image">
+        PHOTO PRODUIT 04
+      </div>
+
+      <div class="product-info">
+        <div class="product-name">
+          Streetwear Set
+        </div>
+
+        <div class="price">
+          25 000 FCFA
+        </div>
+
+        <button
+          class="order-button"
+          onclick="orderProduct('Streetwear Set', '25 000 FCFA')">
+          COMMANDER
+        </button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="section about">
+
+  <h2>ABOUT URBAN COD</h2>
+
+  <p>
+    URBAN COD est une boutique dédiée à la mode urbaine et au streetwear.
+    Notre objectif est de proposer des pièces modernes, originales et
+    accessibles.
+  </p>
+
+</section>
+
+
+<footer>
+  © 2026 URBAN COD — All Rights Reserved.
+</footer>
+
+
+<script>
+
+  let cartCount = 0;
+
+  function orderProduct(product, price) {
+
+    cartCount++;
+
+    document.getElementById("cartCount").textContent = cartCount;
+
+    const phone = "2290145939313";
+
+    const message =
+      "🛍️ *NOUVELLE COMMANDE — URBAN COD*%0A%0A" +
+      "Produit : " + product + "%0A" +
+      "Prix : " + price + "%0A%0A" +
+      "Je souhaite commander cet article.%0A" +
+      "Merci de me confirmer la disponibilité, les frais de livraison et les modalités de paiement.";
+
+    const whatsappURL =
+      "https://wa.me/" + phone + "?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+  }
+
+</script>
+
+</body>
+  </html>
